@@ -8,6 +8,9 @@ const getById = async (title_id) => {
   await axios({
     method: 'get',
     url: url,
+    headers: {
+      "User-Agent" : "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0"
+    }
   })
     .then(response => response.data.toString())
     .then((HTML) => {
@@ -27,6 +30,9 @@ const getTop250 = async () => {
   await axios({
     method: 'get',
     url: url,
+    headers: {
+      "User-Agent" : "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0"
+    }
   })
     .then(response => response.data.toString())
     .then((HTML) => {
@@ -54,6 +60,9 @@ const getToptv250 = async () => {
   await axios({
     method: 'get',
     url: url,
+    headers: {
+      "User-Agent" : "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0"
+    }
   })
     .then(response => response.data.toString())
     .then((HTML) => {
