@@ -17,8 +17,10 @@ const getById = async (title_id) => {
       const $ = cheerio.load(HTML);
       const title = $(".sc-94726ce4-1.iNShGo > h1").text();
       const year = $(".sc-94726ce4-1.iNShGo > div > ul > li:nth-child(1) > span").text();
+      const rating = $(".sc-7ab21ed2-2.kYEdvH > span").text();
       result.title = title;
       result.year = year;
+      result.url = url;
     })
     .catch(() => result.error = "Error occurred");
   return result;
