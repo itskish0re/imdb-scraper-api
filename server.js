@@ -1,11 +1,12 @@
 import express from "express";
-import {getById, getTop250, getToptv250, searchByTitle, searchByName} from "./spiders/scraper.js";
+import getTitleById from "./spiders/getTitleById.js";
+import {getTop250, getToptv250, searchByTitle, searchByName} from "./spiders/scraper.js";
 const PORT = process.env.PORT || 5000;
 
 const app = express();
 
 app.get("/title/:titleId", (req, res) => {
-  getById(req.params.titleId)
+  getTitleById(req.params.titleId)
     .then((response) => res.json(response));
 });
 

@@ -13,7 +13,7 @@ module.exports = {
     "no-extra-semi": "error",
     "semi-spacing": "error",
     "no-unexpected-multiline": "error",
-    "max-len": ["error", { "code": 100 }],
+    "max-len": ["error", { "code": 150 }],
     "comma-style": ["error", "last"],
     "comma-dangle": ["error", "always-multiline"],
   },
