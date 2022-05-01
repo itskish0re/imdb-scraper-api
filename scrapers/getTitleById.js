@@ -34,15 +34,15 @@ const getTitleById = async (title_id) => {
       const rating = $(
         ".sc-94726ce4-4.dyFVGl > div > div:nth-child(1) > a > div > div > " +
         "div.sc-7ab21ed2-0.fAePGh > div.sc-7ab21ed2-2.kYEdvH > span.sc-7ab21ed2-1.jGRxWM").text();
-      const imageViewer = $("a[aria-label='View {Title} Poster']").attr("href");
+      const imageViewer = $("a[aria-label='View {Title} Poster']").attr("href").split("/?")[0];
 
       $("div[data-testid='title-cast-item']").each(function (){
         topCast.push({
           name: $(this).find("a.sc-11eed019-1.jFeBIw").text(),
           characterName: $(this).find("span.sc-11eed019-5.gUFDaA").text(),
           castId: $(this).find("a.sc-11eed019-1.jFeBIw").attr("href").split("?")[0].split("/")[2],
-          castUrl: BASE_URL + $(this).find("a.sc-11eed019-1.jFeBIw").attr("href"),
-          characterUrl: BASE_URL + $(this).find("a[data-testid='cast-item-characters-link']").attr("href"),
+          castUrl: BASE_URL + $(this).find("a.sc-11eed019-1.jFeBIw").attr("href").split("?")[0],
+          characterUrl: BASE_URL + $(this).find("a[data-testid='cast-item-characters-link']").attr("href").split("?")[0],
         });
       });
 
@@ -50,7 +50,7 @@ const getTitleById = async (title_id) => {
         director.push({
           name: $(this).find("a").text(),
           writerId: $(this).find("a").attr("href").split("?")[0].split("/")[2],
-          writerUrl: BASE_URL + $(this).find("a").attr("href"),
+          writerUrl: BASE_URL + $(this).find("a").attr("href").split("?")[0],
         });
       });
 
@@ -58,7 +58,7 @@ const getTitleById = async (title_id) => {
         writers.push({
           name: $(this).find("a").text(),
           writerId: $(this).find("a").attr("href").split("?")[0].split("/")[2],
-          writerUrl: BASE_URL + $(this).find("a").attr("href"),
+          writerUrl: BASE_URL + $(this).find("a").attr("href").split("?")[0],
         });
       });
 
