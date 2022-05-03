@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,280;1,151;1,400&display=swap" rel="stylesheet">
+    <title>Not Found</title>
+    <style>
+        * {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        body{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            justify-items: center;
+            background: #EEEEEE;
+        }
+        .main-container{
+            margin: 80px;
+            height: 550px;
+            width: 60%;
+            border-radius: 30px;
+            display: flex;
+            flex-direction: column;
+            align-content: flex-start;
+            background: #334257;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        #notfound {
+            position: relative;
+            height: 100vh;
+        }
+
+        #notfound .notfound {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+
+        .notfound {
+            max-width: 520px;
+            width: 100%;
+            line-height: 1.4;
+            text-align: center;
+        }
+
+        .notfound .notfound-404 {
+            position: relative;
+            height: 240px;
+        }
+
+        .notfound .notfound-404 h1 {
+            font-family: 'Montserrat', sans-serif;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            font-size: 252px;
+            font-weight: 900;
+            color: #A0BCC2;
+            text-transform: uppercase;
+            letter-spacing: -40px;
+            margin: 0 0 0 -20px;
+        }
+
+        .notfound .notfound-404 h1>span {
+            text-shadow: -8px 0 0 #EEEEEE;
+        }
+
+        .notfound .notfound-404 h3 {
+            font-family: 'Cabin', sans-serif;
+            position: relative;
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #A0BCC2;
+            margin: 0;
+            letter-spacing: 3px;
+            padding-left: 6px;
+        }
+
+        .notfound h2 {
+            font-family: 'Monsterat', sans-serif;
+            font-style: italic;
+            font-size: 20px;
+            font-weight: 300;
+            color: #A0BCC2;
+            margin-top: 0;
+            margin-bottom: 25px;
+        }
+
+        a {
+            outline: none;
+            padding: 2px 1px 0;
+        }
+
+        a:link {
+            color: #A0BCC2;
+        }
+
+        a:visited {
+            color: #A0BCC2;
+        }
+
+        a:focus {
+            color: #A0BCC2;
+        }
+
+        a:hover {
+            color: #334257;
+            border-bottom: 1px solid;
+            border-radius: 6px;
+            background: #EEEEEE;
+            text-decoration: none;
+        }
+
+        a:active {
+            color: #A0BCC2;
+        }
+    </style>
+
+</head>
+<body>
+   <div class="main-container">
+       <div id="notfound">
+           <div class="notfound">
+               <div class="notfound-404">
+                   <h3>Oops! Page not found</h3>
+                   <h1><span>4</span><span>0</span><span>4</span></h1>
+               </div>
+               <h2>we are sorry, but the page you requested was not found</h2>
+           </div>
+       </div>
+   </div>
+</body>
+</html>

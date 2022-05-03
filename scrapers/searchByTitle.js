@@ -24,7 +24,7 @@ const searchByTitle = async (keyWord, exact = false) => {
       const table = $("div.findSection > table > tbody > tr");
       table.each(function (){
         const title = $(this).find("td.result_text").text().trim().replace(/"/g, "'");
-        const url = $(this).find("td.result_text > a").attr("href");
+        const url = $(this).find("td.result_text > a").attr("href").split("?")[0];
         result.totalMatches = $("div > h1.findHeader").text().trim().split(" ")[1];
         result.list.push({
           title,

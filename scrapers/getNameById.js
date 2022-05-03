@@ -96,8 +96,4 @@ const getNameById = async (name_id) => {
   return result;
 };
 
-// getNameeById("nm1165110").then(response => console.log(response));
-
-// getNameeById("nm0000375").then(response => console.log(response));
-
 export default getNameById;
