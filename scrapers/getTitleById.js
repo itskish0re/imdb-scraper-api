@@ -49,8 +49,8 @@ const getTitleById = async (title_id) => {
       $("section[data-testid='title-cast'] > ul > li:nth-child(1) > div > ul > li").each(function(){
         director.push({
           name: $(this).find("a").text(),
-          writerId: $(this).find("a").attr("href").split("?")[0].split("/")[2],
-          writerUrl: BASE_URL + $(this).find("a").attr("href").split("?")[0],
+          directorId: $(this).find("a").attr("href").split("?")[0].split("/")[2],
+          directorUrl: BASE_URL + $(this).find("a").attr("href").split("?")[0],
         });
       });
 
@@ -62,9 +62,10 @@ const getTitleById = async (title_id) => {
         });
       });
 
-      $("section[data-testid='Storyline'] > div > ul.IjgYL.ipc-metadata-list--base > li:nth-child(2) > div > ul > li").each(function(){
-        genres.push($(this).find("a").text());
-      });
+      $("section[data-testid='Storyline'] > div > ul.IjgYL.ipc-metadata-list--base > li[data-testid='storyline-genres'] > div > ul > li")
+        .each(function(){
+          genres.push($(this).find("a").text());
+        });
 
       $("section[data-testid='Details'] > div.sc-f65f65be-0.ktSkVi > ul > li:nth-child(7) > div > ul > li").each(function(){
         productionCompanies.push($(this).find("a").text());
