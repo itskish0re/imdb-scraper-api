@@ -1,2 +1,2 @@
-# imdb-scraper-api
+# movies-scraper-api
 A basic API to scrape data from IMDB
