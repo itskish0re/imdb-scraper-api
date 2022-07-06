@@ -25,7 +25,8 @@ const searchByName = async (keyWord, exact = false) => {
       const table = $("div.findSection > table > tbody > tr");
       table.each(function (){
         const name = $(this).find("td.result_text > a").text().trim();
-        const about = ABOUT_PATTERN.exec($(this).find("td.result_text > small").text().trim())[1] || "N/A";
+        const about = ABOUT_PATTERN.exec($(this).find("td.result_text > small")
+          .text().trim())[1] || "N/A";
         const occupation = about.split(", ")[0] || "N/A";
         const majorWork = about.split(", ")[1] || "N/A";
         const url = $(this).find("td.result_text > a").attr("href").split("?")[0];

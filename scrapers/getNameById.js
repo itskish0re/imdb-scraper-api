@@ -33,20 +33,27 @@ const getNameById = async (name_id) => {
 
       const $ = cheerio.load(HTML);
       const name = $(".name-overview-widget__section > h1 > span").text();
-      born.date = $("div#name-born-info > time").text().trim().replace(/\s\s+/g," ");
+      born.date = $("div#name-born-info > time").text().trim()
+        .replace(/\s\s+/g," ");
       born.place = $("div#name-born-info > a").text();
-      const bio = $(".name-trivia-bio-text > div.inline").text().trim().replace(/\s\s+/g," ").split("...")[0].trim();
+      const bio = $(".name-trivia-bio-text > div.inline").text().trim()
+        .replace(/\s\s+/g," ").split("...")[0].trim();
       const imageUrl = $("td#img_primary > div > div > a > img").attr("src");
       $("div#name-job-categories > a").each(function(){
         roles.push($(this).find("span.itemprop").text().trim());
       });
 
-      personalDetails.publicListing = $("div#details-publicity-listings").text()
-        .replace(/\s\s+/g, " ").split(":")[1].replace("| See more » ", "").trim().split(" | ");
-      personalDetails.socialmedia.facebook = $("div#details-official-sites > a[data-ref='nm_pdt_ofs_offsite_0']").attr("href");
-      personalDetails.socialmedia.instagram = $("div#details-official-sites > a[data-ref='nm_pdt_ofs_offsite_1']").attr("href");
-      personalDetails.alternateNames = $("div#details-akas").text().replace(/\s\s+/g, " ").split(":")[1].trim().split(" | ") || "N/A";
-      personalDetails.height = $("div#details-height").text().replace(/\s/g, " ").split(":")[1].trim();
+      personalDetails.publicListing =
+        $("div#details-publicity-listings").text().replace(/\s\s+/g, " ").split(":")[1]
+          .replace("| See more » ", "").trim().split(" | ");
+      personalDetails.socialmedia.facebook =
+        $("div#details-official-sites > a[data-ref='nm_pdt_ofs_offsite_0']").attr("href");
+      personalDetails.socialmedia.instagram =
+        $("div#details-official-sites > a[data-ref='nm_pdt_ofs_offsite_1']").attr("href");
+      personalDetails.alternateNames = $("div#details-akas").text().replace(/\s\s+/g, " ")
+        .split(":")[1].trim().split(" | ") || "N/A";
+      personalDetails.height =
+        $("div#details-height").text().replace(/\s/g, " ").split(":")[1].trim();
       $("div#details-spouses > a").each(function (){
         personalDetails.spouse.push({
           name: $(this).text(),
@@ -68,7 +75,8 @@ const getNameById = async (name_id) => {
       personalDetails.starSign = $("div#dyk-star-sign > a").text();
 
       $("div#filmography > div[data-category]").each(function (){
-        const type = $(this).text().replace(/\s+/g," ").trim().replace("Hide Show ","");
+        const type = $(this).text().replace(/\s+/g," ").trim()
+          .replace("Hide Show ","");
         filmography[type] = [];
         $(this).next().children("div").each(function (){
           filmography[type].push({
@@ -89,7 +97,8 @@ const getNameById = async (name_id) => {
       result.imageUrl = imageUrl;
       result.personalDetails = personalDetails;
       result.filmography = filmography;
-      result.awards = $("span.awards-blurb > b").text().trim().replace(/\s\s+/g," ") || "N/A";
+      result.awards = $("span.awards-blurb > b").text().trim()
+        .replace(/\s\s+/g," ") || "N/A";
 
     })
     .catch(() => result.error = "Error occurred");
